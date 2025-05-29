@@ -86,29 +86,21 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1309,7012.000000000001" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1309,6619" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolValidade" />
       <Variable x:TypeArguments="x:String" Name="strFinDigits" />
       <Variable x:TypeArguments="x:String" Name="strVerFinDigits" />
       <Variable x:TypeArguments="x:Int32" Name="intSoma1" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="lsCalcDigit1" />
-      <Variable x:TypeArguments="x:Int32" Name="intMultiplicador1">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="10" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="10" Name="intMultiplicador1" />
       <Variable x:TypeArguments="x:Int32" Name="intDigit" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="lsDigitsCPF" />
       <Variable x:TypeArguments="s:Char[]" Name="arrDigits" />
       <Variable x:TypeArguments="s:String[]" Name="arrVerCPF" />
       <Variable x:TypeArguments="x:String" Name="strCPF" />
       <Variable x:TypeArguments="x:Int32" Name="intSoma2" />
-      <Variable x:TypeArguments="x:Int32" Name="intMultiplicador2">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="11" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="11" Name="intMultiplicador2" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="lsCalcDigit2" />
       <Variable x:TypeArguments="x:String" Name="strinCPF" />
     </Sequence.Variables>
@@ -117,12 +109,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="470,275" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Digite seu CPF" Title="Caixa de Texto">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="470,271" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Digite seu CPF" Title="Caixa de Texto">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[strinCPF]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_34">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_34">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strCPF]</OutArgument>
       </Assign.To>
@@ -130,7 +122,7 @@
         <InArgument x:TypeArguments="x:String">[strinCPF]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[arrVerCPF]</OutArgument>
       </Assign.To>
@@ -138,7 +130,7 @@
         <InArgument x:TypeArguments="s:String[]">[strCPF.Split("-"c)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strCPF]</OutArgument>
       </Assign.To>
@@ -146,7 +138,7 @@
         <InArgument x:TypeArguments="x:String">[arrVerCPF(0).ToString.replace(".","")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_25">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_25">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strFinDigits]</OutArgument>
       </Assign.To>
@@ -154,7 +146,7 @@
         <InArgument x:TypeArguments="x:String">[arrVerCPF(1).ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="s:Char[]">[arrDigits]</OutArgument>
       </Assign.To>
@@ -162,7 +154,7 @@
         <InArgument x:TypeArguments="s:Char[]">[strCPF.ToCharArray]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[lsDigitsCPF]</OutArgument>
       </Assign.To>
@@ -170,24 +162,24 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="470,349" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrDigits]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="470,346" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrDigits]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="416,216" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="382,158" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[currentItem.ToString]" List="[lsDigitsCPF]" />
+            <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="382,156" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[currentItem.ToString]" List="[lsDigitsCPF]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[lsCalcDigit1]</OutArgument>
       </Assign.To>
@@ -195,7 +187,7 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,809" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[lsDigitsCPF]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,808" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[lsDigitsCPF]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -247,7 +239,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_13">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intSoma1]</OutArgument>
       </Assign.To>
@@ -255,7 +247,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,412" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[lsCalcDigit1]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,411" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[lsCalcDigit1]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -290,7 +282,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_16">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_16">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intSoma1]</OutArgument>
       </Assign.To>
@@ -298,7 +290,7 @@
         <InArgument x:TypeArguments="x:Int32">[intSoma1 mod 11]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_26">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_26">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intSoma1]</OutArgument>
       </Assign.To>
@@ -306,15 +298,15 @@
         <InArgument x:TypeArguments="x:Int32">[11 - intSoma1]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[intSoma1 &gt;= 10]" sap:VirtualizedContainerService.HintSize="470,395" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[intSoma1 &gt;= 10]" sap:VirtualizedContainerService.HintSize="470,392" sap2010:WorkflowViewState.IdRef="If_5">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_36">
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_36">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[intSoma1]</OutArgument>
             </Assign.To>
@@ -325,7 +317,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,90" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,89" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -334,7 +326,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_29">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_29">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[lsCalcDigit2]</OutArgument>
       </Assign.To>
@@ -342,7 +334,7 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,809" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[lsDigitsCPF]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,808" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[lsDigitsCPF]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -394,7 +386,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_28">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_28">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intSoma2]</OutArgument>
       </Assign.To>
@@ -402,13 +394,13 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,412" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[lsCalcDigit2]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="470,410" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[lsCalcDigit2]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="468,281" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="468,280" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="intIdSoma1" />
               <Variable x:TypeArguments="x:Int32" Name="intIdSoma2" />
@@ -426,7 +418,7 @@
                 <InArgument x:TypeArguments="x:Int32">[cint(currentText)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_22">
+            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_22">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[intSoma2]</OutArgument>
               </Assign.To>
@@ -438,7 +430,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_23">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_23">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intSoma2]</OutArgument>
       </Assign.To>
@@ -446,7 +438,7 @@
         <InArgument x:TypeArguments="x:Int32">[(intSoma2 + intSoma1 * 2) mod 11]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_27">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_27">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intSoma2]</OutArgument>
       </Assign.To>
@@ -454,15 +446,15 @@
         <InArgument x:TypeArguments="x:Int32">[11 - intSoma2]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[intSoma2 &gt;= 10]" sap:VirtualizedContainerService.HintSize="470,395" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[intSoma2 &gt;= 10]" sap:VirtualizedContainerService.HintSize="470,393" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_30">
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_30">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[intSoma2]</OutArgument>
             </Assign.To>
@@ -482,7 +474,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_24">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_24">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strVerFinDigits]</OutArgument>
       </Assign.To>
@@ -490,15 +482,15 @@
         <InArgument x:TypeArguments="x:String">[String.Join("", intSoma1.toString, intSoma2.ToString)]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[strFinDigits = strVerFinDigits]" sap:VirtualizedContainerService.HintSize="470,471" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[strFinDigits = strVerFinDigits]" sap:VirtualizedContainerService.HintSize="470,468" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_31">
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_31">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[boolValidade]</OutArgument>
             </Assign.To>
@@ -509,13 +501,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_32">
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_32">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[boolValidade]</OutArgument>
             </Assign.To>
@@ -526,8 +518,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="470,118" sap2010:WorkflowViewState.IdRef="MessageBox_26" Text="[boolValidade]" />
-    <Assign sap:VirtualizedContainerService.HintSize="470,115" sap2010:WorkflowViewState.IdRef="Assign_35">
+    <Assign sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="Assign_35">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strinCPF]</OutArgument>
       </Assign.To>
@@ -535,27 +526,25 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strinCPF, "[^\d]", "")]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[strinCPF.Length = 11 and strinCPF.Distinct.Count &lt;&gt; 1 and boolValidade = True]" sap:VirtualizedContainerService.HintSize="470,704" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[strinCPF.Length = 11 and strinCPF.Distinct.Count &lt;&gt; 1 and boolValidade = True]" sap:VirtualizedContainerService.HintSize="470,465" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,287" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="382,118" sap2010:WorkflowViewState.IdRef="MessageBox_24" Text="[strinCPF]" />
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="382,109" sap2010:WorkflowViewState.IdRef="MessageBox_19" Text="[&quot;Esse CPF é Valido&quot;]" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="382,108" sap2010:WorkflowViewState.IdRef="MessageBox_19" Text="[&quot;Esse CPF é Valido&quot;]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,287" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="382,118" sap2010:WorkflowViewState.IdRef="MessageBox_25" Text="[strinCPF]" />
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="382,109" sap2010:WorkflowViewState.IdRef="MessageBox_20" Text="[&quot;Esse CPF é Invalido&quot;]" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="382,108" sap2010:WorkflowViewState.IdRef="MessageBox_20" Text="[&quot;Esse CPF é Invalido&quot;]" />
         </Sequence>
       </If.Else>
     </If>
